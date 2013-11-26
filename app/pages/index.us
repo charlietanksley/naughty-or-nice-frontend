@@ -3,9 +3,29 @@
   <head>
     <title><%= pkg.name %></title>
 
-    <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
+    <link rel="stylesheet" type="text/css" href="/<%= css %>" media="all" />
   </head>
   <body>
-    <script type="text/javascript" src="<%= js %>"></script>
+
+    <section class="main"></section>
+
+    <script type="text/javascript" src="/<%= js %>"></script>
+
+    <script type="text/html" id="search">
+      <form action='/search'>
+        @<input placeholder="username" name="username" type="text">
+        <button type="submit">Submit</button>
+      </form>
+    </script>
+
+    <script id="showUser" type="text/html">
+      <div class="username">
+        <h2>{ report.username }</h2>
+      </div>
+
+      <div class="number">
+        <p>{ report.naughtyCount }</p>
+      </div>
+    </script>
   </body>
 </html>
