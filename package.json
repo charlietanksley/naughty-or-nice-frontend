@@ -1,0 +1,16 @@
+{
+  "name": "naughty-or-nice-frontend",
+  "title": "An HTML/JS/CSS app",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Charlie Tanksley"
+  },
+  "dependencies": {
+    "lineman": "~0.11.1"
+  },
+  "engines": {
+    "node": "~>0.10.5",
+    "npm": "~>1.2.18"
+  }
+}
