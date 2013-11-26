@@ -7,7 +7,7 @@
     "name": "Charlie Tanksley"
   },
   "dependencies": {
-    "lineman": "~0.11.1"
+    "lineman": "~0.18.2"
   },
   "engines": {
     "node": "~>0.10.5",
