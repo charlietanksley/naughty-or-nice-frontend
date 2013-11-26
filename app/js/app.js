@@ -1,5 +1,6 @@
 /* global $ location */
-var Routes
+var Report
+  , Routes
   , router
 
 function templateCache() {
@@ -40,14 +41,14 @@ Routes = {
     var data
       , fragment
 
-    data = { report:
-             { username: obj.username
-             , naughtyCount: 20
-             }
-           }
-
-    fragment = $.renderTemplate(template('showUser'), data)
-    changePage(fragment)
+    $.ajax({
+      url: '/api/naughty_count/' + obj.username
+    , type: 'json'
+    }).then(function(resp) {
+      data = {report: resp}
+      fragment = $.renderTemplate(template('showUser'), data)
+      changePage(fragment)
+    })
   }
 
 , search: function(obj) {
