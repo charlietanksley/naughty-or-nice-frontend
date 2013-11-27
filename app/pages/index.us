@@ -31,15 +31,31 @@
 
     <section class="report"></section>
 
+      <section class="about row">
+        <div class="large-6 large-centered columns">
+          <h3>About</h3>
+          <p>
+            Naughty or Nice looks for profanity in your tweets.  We
+            look at your last 200 tweets and look for uses of profane
+            words (the words are
+            just <a href="http://simple.wikipedia.org/wiki/Profanity">this
+            list from Wikipedia</a>).  Your score is simply the total
+            count of said words in said tweets.
+          </p>
+        </div>
+      </section>
+
     <script type="text/javascript" src="/<%= js %>"></script>
 
     <script id="showUser" type="text/html">
-      <div class="username row">
-        <h2 class="name">{ report.username }</h2>
-      </div>
+      <div class="user-report row">
+        <div class="username row">
+          <h2 class="name">{ report.username }</h2>
+        </div>
 
-      <div class="row">
-        <p class="score">Score: { report.naughtyCount }</p>
+        <div class="row">
+          <p class="score">Score: { report.naughtyCount }</p>
+        </div>
       </div>
     </script>
   </body>
