@@ -42,6 +42,11 @@
             list from Wikipedia</a>).  Your score is simply the total
             count of said words in said tweets.
           </p>
+
+          <p>
+            Built by <a href="https://github.com/charlietanksley">Charlie
+              Tanksley</a>.
+          </p>
         </div>
       </section>
 
