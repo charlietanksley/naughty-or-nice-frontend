@@ -1,0 +1,46 @@
+// http://modularscale.com/scale/?px1=16&px2=150&ra1=1.6&ra2=0
+// http://www.colourlovers.com/palette/3144311/Candy_Bomber_22
+$font-family: 'Dosis', sans-serif;
+$header-font-family: $font-family;
+$body-font-family: $font-family;
+
+$brown: #594A4D;
+$peach: #E5BAB1;
+$pink: #F64160;
+$yellow: #FEE030;
+$green: #8ACC50;
+
+$primary-color: $green;
+$secondary-color: $pink;
+$alert-color: $yellow;
+$success-color: $peach;
+$highlight: $pink;
+
+@import "foundation/foundation/components/global";
+@import "foundation/foundation/components/buttons";
+@import "foundation/foundation/components/grid";
+@import "foundation/foundation/components/type";
+@import "foundation/foundation/components/forms";
+
+.header {
+  margin-top: 3.662em;
+  text-align: center;
+}
+
+.heading {
+  font-size: 5.859em;
+}
+
+.main {
+  border-bottom: 1px solid $highlight;
+}
+
+.name {
+  text-align: center;
+  font-size: 3.662em;
+}
+
+.score {
+  font-size: 2.56em;
+  text-align: center;
+}

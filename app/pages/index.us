@@ -4,13 +4,25 @@
     <title><%= pkg.name %></title>
 
     <link rel="stylesheet" type="text/css" href="/<%= css %>" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
-    <section class="main">
-      <form action='/search'>
-        @<input placeholder="username" name="username" type="text">
-        <button type="submit">Submit</button>
+    <header class="row header">
+      <h1 class="heading">Naughty or Nice?</h1>
+    </header>
+    
+    <section class="main row">
+      <div class="large-6 large-centered columns">
+        <p class="how-to">
+          How nice are your tweets?  Enter your username below to find out!
+        </p>
+
+        <form action='/search'>
+          <input placeholder="username" name="username" type="text">
+
+          <button type="submit" class="postfix">Submit</button>
+        </div>
       </form>
     </section>
 
@@ -19,12 +31,12 @@
     <script type="text/javascript" src="/<%= js %>"></script>
 
     <script id="showUser" type="text/html">
-      <div class="username">
-        <h2>{ report.username }</h2>
+      <div class="username row">
+        <h2 class="name">{ report.username }</h2>
       </div>
 
-      <div class="number">
-        <p>{ report.naughtyCount }</p>
+      <div class="row">
+        <p class="score">Score: { report.naughtyCount }</p>
       </div>
     </script>
   </body>
