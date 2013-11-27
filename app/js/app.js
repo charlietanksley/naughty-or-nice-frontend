@@ -54,7 +54,7 @@ Routes = {
 
     regex = new RegExp(/=(\w+)$/)
     username = regex.exec(location.search)[1]
-    path = '/report/' + username
+    path = username
     location.replace(path)
   }
 }
@@ -62,8 +62,8 @@ Routes = {
 router = new $.route()
 router.add({
   '/': Routes.main
-, '/report/:username': Routes.report
 , '/search': Routes.search
+, '/:username': Routes.report
 });
 
 $(document).ready(function () {
