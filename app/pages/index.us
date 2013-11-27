@@ -24,7 +24,7 @@
         <form action='/search'>
           <input placeholder="username" name="username" type="text">
 
-          <button type="submit" class="postfix">Submit</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </section>
