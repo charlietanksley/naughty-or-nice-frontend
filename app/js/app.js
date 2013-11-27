@@ -25,16 +25,12 @@ function template(name) {
 function changePage(fragment) {
   var element
 
-  element = document.getElementsByClassName('main')[0]
+  element = document.getElementsByClassName('report')[0]
   element.innerHTML = fragment
 }
 
 Routes = {
   main: function() {
-    var fragment
-
-    fragment = $.renderTemplate(template('search'))
-    changePage(fragment)
   }
 
 , report: function(obj) {

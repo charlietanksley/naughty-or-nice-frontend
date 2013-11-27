@@ -7,16 +7,16 @@
   </head>
   <body>
 
-    <section class="main"></section>
-
-    <script type="text/javascript" src="/<%= js %>"></script>
-
-    <script type="text/html" id="search">
+    <section class="main">
       <form action='/search'>
         @<input placeholder="username" name="username" type="text">
         <button type="submit">Submit</button>
       </form>
-    </script>
+    </section>
+
+    <section class="report"></section>
+
+    <script type="text/javascript" src="/<%= js %>"></script>
 
     <script id="showUser" type="text/html">
       <div class="username">
