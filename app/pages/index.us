@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= pkg.name %></title>
+    <meta name="viewport" content="width=device-width" />
 
     <link rel="stylesheet" type="text/css" href="/<%= css %>" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
