@@ -9,7 +9,9 @@
   <body>
 
     <header class="row header">
-      <h1 class="heading">Naughty or Nice?</h1>
+      <a href="/">
+        <h1 class="heading">Naughty or Nice?</h1>
+      </a>
     </header>
     
     <section class="main row">
