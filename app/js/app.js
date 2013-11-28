@@ -66,6 +66,13 @@ Routes = {
   main: function() {
   }
 
+, aboutScore: function() {
+    var fragment
+
+    fragment = $.renderTemplate(template('aboutScore'))
+    changePage(fragment)
+  }
+
 , report: function(obj) {
     var data
       , fragment
@@ -98,6 +105,7 @@ Routes = {
 router = new $.route()
 router.add({
   '/': Routes.main
+, '/about/score': Routes.aboutScore
 , '/search': Routes.search
 , '/:username': Routes.report
 });
