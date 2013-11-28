@@ -1,5 +1,6 @@
 /* global $ location */
-var Report
+var Loading
+  , Report
   , Routes
   , router
 
@@ -29,6 +30,38 @@ function changePage(fragment) {
   element.innerHTML = fragment
 }
 
+Loading = {
+  opts: {
+    lines: 13
+  , length: 20
+  , width: 10
+  , radius: 30
+  , corners: 1
+  , rotate: 0
+  , direction: 1
+  , color: '#000'
+  , speed: 1
+  , trail: 60
+  , shadow: false
+  , hwaccel: false
+  , className: 'spinner'
+  , zIndex: 2e9
+  , top: 'auto'
+  , left: 'auto'
+  }
+
+, target: document.getElementsByClassName('report')[0]
+, spinner: function() {
+    return new Spinner(this.opts)
+  }
+, start: function() {
+    this.spinner().spin(this.target)
+  }
+, stop: function() {
+    this.spinner().stop()
+  }
+}
+
 Routes = {
   main: function() {
   }
@@ -37,6 +70,8 @@ Routes = {
     var data
       , fragment
 
+    Loading.start()
+
     $.ajax({
       url: '/api/naughty_count/' + obj.username
     , type: 'json'
@@ -44,6 +79,7 @@ Routes = {
       data = {report: resp}
       fragment = $.renderTemplate(template('showUser'), data)
       changePage(fragment)
+      Loading.stop()
     })
   }
 
