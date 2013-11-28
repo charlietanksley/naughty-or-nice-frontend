@@ -17,16 +17,22 @@
     
     <section class="main row">
       <div class="large-6 large-centered columns">
-        <p class="how-to">
-          How nice are your tweets?  Enter your username below to find out!
-        </p>
+        <div class="row">
+          <p class="how-to columns large-12">
+            How nice are your tweets?  Enter your username below to find out!
+          </p>
+        </div>
 
         <form action='/search'>
-          <input placeholder="username" name="username" type="text">
+          <div class="row">
+            <input class="columns large-12" placeholder="username" name="username" type="text">
+          </div>
 
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          <div class="row">
+            <button class="columns large-12" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </section>
 
     <section class="report"></section>
