@@ -32,6 +32,14 @@
             <button class="columns large-12" type="submit">Submit</button>
           </div>
         </form>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <p class="what-does-it-mean">
+              <a href="/about/score">What does it mean?</a>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
