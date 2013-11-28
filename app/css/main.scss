@@ -26,6 +26,10 @@ $highlight: $pink;
   padding-top: 1em;
 }
 
+.about-score {
+  padding-top: 1em;
+}
+
 .credits {
   text-align: right;
 }
@@ -39,7 +43,9 @@ $highlight: $pink;
   font-size: 5.859em;
 }
 
-.main, .user-report {
+.about-score,
+.main,
+.user-report {
   border-bottom: 1px solid $highlight;
 }
 
