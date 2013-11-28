@@ -22,6 +22,14 @@ $highlight: $pink;
 @import "foundation/foundation/components/type";
 @import "foundation/foundation/components/forms";
 
+.about {
+  padding-top: 1em;
+}
+
+.credits {
+  text-align: right;
+}
+
 .header {
   margin-top: 3.662em;
   text-align: center;
