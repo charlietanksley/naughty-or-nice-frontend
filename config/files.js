@@ -16,6 +16,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   js: {
     vendor: [
       'ender.js'
+    , "vendor/js/**/*.js"
     ]
   }
 
