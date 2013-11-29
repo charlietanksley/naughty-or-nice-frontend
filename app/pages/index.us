@@ -45,14 +45,14 @@
 
     <section class="report"></section>
 
-      <section class="about row">
-        <div class="large-6 large-centered columns">
-          <p class="credits">
-            Built by <a href="https://github.com/charlietanksley">Charlie
-              Tanksley</a>.
-          </p>
-        </div>
-      </section>
+    <section class="about row">
+      <div class="large-6 large-centered columns">
+        <p class="credits">
+          Built by <a href="https://github.com/charlietanksley">Charlie
+            Tanksley</a>.
+        </p>
+      </div>
+    </section>
 
     <script type="text/javascript" src="/<%= js %>"></script>
 
