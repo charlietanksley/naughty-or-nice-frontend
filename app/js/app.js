@@ -4,6 +4,8 @@ var Loading
   , Routes
   , router
 
+var isEmpty = $.is.empty
+
 function templateCache() {
   return $.v.reduce(document.scripts
                    , function(memo, item, index) {
@@ -77,17 +79,19 @@ Routes = {
     var data
       , fragment
 
-    Loading.start()
+    if (!isEmpty(obj.username)) {
+      Loading.start()
 
-    $.ajax({
-      url: '/api/naughty_count/' + obj.username
-    , type: 'json'
-    }).then(function(resp) {
-      data = {report: resp}
-      fragment = $.renderTemplate(template('showUser'), data)
-      changePage(fragment)
-      Loading.stop()
-    })
+      $.ajax({
+        url: '/api/naughty_count/' + obj.username
+      , type: 'json'
+      }).then(function(resp) {
+        data = {report: resp}
+        fragment = $.renderTemplate(template('showUser'), data)
+        changePage(fragment)
+        Loading.stop()
+      })
+    }
   }
 
 , search: function(obj) {
