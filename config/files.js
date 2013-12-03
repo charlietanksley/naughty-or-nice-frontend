@@ -15,6 +15,8 @@
 module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   js: {
     vendor: [
+      'bower_components/zepto/zepto.js'
+    , 'bower_components/canjs/can.zepto.js'
     , "vendor/js/**/*.js"
     ]
   }
