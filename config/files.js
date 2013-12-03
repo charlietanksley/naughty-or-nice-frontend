@@ -17,6 +17,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
     vendor: [
       'bower_components/jquery/jquery.js'
     , 'bower_components/canjs/can.jquery.js'
+    , 'bower_components/canjs/can.route.pushstate.js'
     , "vendor/js/**/*.js"
     ]
   }
