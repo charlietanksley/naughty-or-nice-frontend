@@ -1,0 +1,9 @@
+{
+  "name": "naughty-or-nice",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "canjs": "~2.0.3",
+    "zepto": "*"
+  }
+}
