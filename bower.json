@@ -4,6 +4,6 @@
   "private": true,
   "dependencies": {
     "canjs": "~2.0.3",
-    "zepto": "*"
+    "jquery": "~2.0.3"
   }
 }
