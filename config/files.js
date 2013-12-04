@@ -14,12 +14,17 @@
 
 module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   js: {
-    vendor: [
-      "vendor/js/extend.js"
-    , 'bower_components/jquery/jquery.js'
-    , 'bower_components/canjs/can.jquery.js'
-    , 'bower_components/canjs/can.route.pushstate.js'
+
+    app: [
+      "app/js/lib/**/*.js"
+    , "app/js/app.js"
     ]
+
+  , vendor: [
+    'bower_components/jquery/jquery.js'
+  , 'bower_components/canjs/can.jquery.js'
+  , 'bower_components/canjs/can.route.pushstate.js'
+  ]
   }
 
 });
