@@ -1,119 +1,78 @@
-/* global $ location */
-var Loading
-  , Report
-  , Routes
-  , router
+var About
+  , page
+  , Router
+  , ScoreReport
+  , UserReport
 
-var isEmpty = $.is.empty
+page = '.report'
 
-function templateCache() {
-  return $.v.reduce(document.scripts
-                   , function(memo, item, index) {
-                       memo[item.id] = index
-                       return memo
-                    }
-                   , {})
-}
+ScoreReport = can.Model.extend({
+  findOne: 'GET /api/naughty_count/{username}'
+}, {})
 
-function template(name) {
-  var cache
-    , id
-
-  cache = templateCache()
-  id = cache[name]
-
-  return document.scripts[id].innerHTML
-}
-
-function changePage(fragment) {
-  var element
-
-  element = document.getElementsByClassName('report')[0]
-  element.innerHTML = fragment
-}
-
-Loading = {
-  opts: {
-    lines: 13
-  , length: 20
-  , width: 10
-  , radius: 30
-  , corners: 1
-  , rotate: 0
-  , direction: 1
-  , color: '#000'
-  , speed: 1
-  , trail: 60
-  , shadow: false
-  , hwaccel: false
-  , className: 'spinner'
-  , zIndex: 2e9
-  , top: 'auto'
-  , left: 'auto'
+Router = can.Control.extend({
+  'about/score route': function() {
+    var about
+    about = new About(page)
+    about.score()
   }
 
-, target: document.getElementsByClassName('report')[0]
-, spinner: function() {
-    return new Spinner(this.opts)
-  }
-, start: function() {
-    this.spinner().spin(this.target)
-  }
-, stop: function() {
-    this.spinner().stop()
-  }
-}
-
-Routes = {
-  main: function() {
+, 'search route': function(data) {
+    can.route.attr('username', data.username)
   }
 
-, aboutScore: function() {
-    var fragment
+, ':username route': function(data) {
+   var report
+   report = new UserReport(page)
 
-    fragment = $.renderTemplate(template('aboutScore'))
-    changePage(fragment)
+   report.show(data.username)
+ }
+
+, 'route': function() {
   }
-
-, report: function(obj) {
-    var data
-      , fragment
-
-    if (!isEmpty(obj.username)) {
-      Loading.start()
-
-      $.ajax({
-        url: '/api/naughty_count/' + obj.username
-      , type: 'json'
-      }).then(function(resp) {
-        data = {report: resp}
-        fragment = $.renderTemplate(template('showUser'), data)
-        changePage(fragment)
-        Loading.stop()
-      })
-    }
-  }
-
-, search: function(obj) {
-    var path
-      , regex
-      , username
-
-    regex = new RegExp(/=(\w+)$/)
-    username = regex.exec(location.search)[1]
-    path = username
-    location.replace(path)
-  }
-}
-
-router = new $.route()
-router.add({
-  '/': Routes.main
-, '/about/score': Routes.aboutScore
-, '/search': Routes.search
-, '/:username': Routes.report
-});
-
-$(document).ready(function () {
-  router.run(document.location.pathname);
 })
+
+About = can.Control.extend({
+  defaults: {}
+}, {
+  init: function(element, options) {
+
+  }
+
+, score: function() {
+    var fragment
+      , self = this
+      , view = 'aboutScore'
+
+    fragment = can.view(view)
+
+    self.element.html(fragment)
+  }
+})
+
+
+UserReport = can.Control.extend({
+  defaults: { view: 'showUser' }
+}, {
+  init: function( element , options ) {
+    var self = this
+  }
+
+, show: function(username) {
+    var self = this
+    ScoreReport.findOne({username: username})
+    .then(function(data) {
+      var fragment
+        , report
+
+      report = { username: data.username
+               , score: data.naughtyCount }
+      fragment = can.view(self.options.view, report)
+
+      self.element.html(fragment)
+    })
+  }
+})
+
+new Router()
+can.route.ready()

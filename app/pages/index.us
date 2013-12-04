@@ -56,19 +56,19 @@
 
     <script type="text/javascript" src="/<%= js %>"></script>
 
-    <script id="showUser" type="text/html">
+    <script id="showUser" type="text/mustache">
       <div class="user-report row">
         <div class="username row">
-          <h2 class="name">{ report.username }</h2>
+          <h2 class="name">{{ username }}</h2>
         </div>
 
         <div class="row">
-          <p class="score">Score: { report.naughtyCount }</p>
+          <p class="score">Score: {{ score }}</p>
         </div>
       </div>
     </script>
 
-    <script id="aboutScore" type="text/html">
+    <script id="aboutScore" type="text/mustache">
       <div class="row about-score">
         <div class="columns large-6 large-centered">
           <p>
@@ -80,6 +80,9 @@
           </p>
         </div>
       </div>
+    </script>
+
+    <script id="blank" type="text/mustache">
     </script>
   </body>
 </html>
