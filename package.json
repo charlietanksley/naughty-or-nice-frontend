@@ -1,7 +1,7 @@
 {
   "name": "naughty-or-nice-frontend",
   "title": "How clean are your tweets?",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "author": {
     "name": "Charlie Tanksley"
