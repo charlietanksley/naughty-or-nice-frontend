@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= pkg.name %></title>
+    <title><%= pkg.title %></title>
     <meta name="viewport" content="width=device-width" />
 
     <link rel="stylesheet" type="text/css" href="/<%= css %>" media="all" />
