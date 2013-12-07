@@ -4,6 +4,6 @@
   </div>
 
   <div class="row">
-    <p class="score">Score: {{ score }}</p>
+    <p class="score">{{ score }}%</p>
   </div>
 </div>
