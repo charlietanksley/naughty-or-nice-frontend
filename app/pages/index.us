@@ -55,34 +55,5 @@
     </section>
 
     <script type="text/javascript" src="/<%= js %>"></script>
-
-    <script id="showUser" type="text/mustache">
-      <div class="user-report row">
-        <div class="username row">
-          <h2 class="name">{{ username }}</h2>
-        </div>
-
-        <div class="row">
-          <p class="score">Score: {{ score }}</p>
-        </div>
-      </div>
-    </script>
-
-    <script id="aboutScore" type="text/mustache">
-      <div class="row about-score">
-        <div class="columns large-6 large-centered">
-          <p>
-            Your score is, right now, a simple count of how many times
-            you've used 'profanity' (as defined
-            by <a href="http://simple.wikipedia.org/wiki/Profanity">this
-              Wikipedia page</a>). In your recent tweets (where 'recent'
-            is your the last 200).
-          </p>
-        </div>
-      </div>
-    </script>
-
-    <script id="blank" type="text/mustache">
-    </script>
   </body>
 </html>

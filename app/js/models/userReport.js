@@ -1,5 +1,5 @@
 var UserReport = can.Control.extend({
-  defaults: { view: 'showUser' }
+  defaults: { view: findView('showUser') }
 }, {
   init: function(element, options) {
     var self = this
@@ -11,6 +11,7 @@ var UserReport = can.Control.extend({
     .then(function(data) {
       var fragment
         , report
+
 
       report = { username: data.username
                , score: data.naughtyCount }

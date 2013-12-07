@@ -8,7 +8,7 @@ var About = can.Control.extend({
 , score: function() {
     var fragment
       , self = this
-      , view = 'aboutScore'
+      , view = findView('aboutScore')
 
     fragment = can.view(view)
 

@@ -17,5 +17,6 @@ var Router = can.Control.extend({
  }
 
 , 'route': function() {
+    $('.report').html('')
   }
 })

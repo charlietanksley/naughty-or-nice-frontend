@@ -16,12 +16,16 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   js: {
 
     app: [
-      "app/js/lib/**/*.js"
+      "app/js/lib/*.js"
+    , "app/js/models/*.js"
+    , "app/js/data/*.js"
+    , "app/js/router.js"
     , "app/js/app.js"
     ]
 
   , vendor: [
     'bower_components/jquery/jquery.js'
+  , 'bower_components/handlebars/handlebars.js'
   , 'bower_components/canjs/can.jquery.js'
   , 'bower_components/canjs/can.route.pushstate.js'
   ]
